@@ -26,7 +26,7 @@ function BottomComponent({
     setTotalIncome(calculateTotal(incomes));
     setTotalExpense(calculateTotal(expenses));
     setTotalAvailble(calculateTotal(incomes) - calculateTotal(expenses));
-  }, [incomes, expenses]);
+  }, [incomes, expenses, setTotalIncome, setTotalExpense, setTotalAvailble]);
 
   useEffect(() => {
     storeBudget({ incomes, expenses });
