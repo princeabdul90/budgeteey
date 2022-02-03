@@ -25,7 +25,10 @@ function BottomComponent({
   useEffect(() => {
     setTotalIncome(calculateTotal(incomes));
     setTotalExpense(calculateTotal(expenses));
-    setTotalAvailble(calculateTotal(incomes) - calculateTotal(expenses));
+    if (incomes > expenses) {
+      setTotalAvailble(calculateTotal(incomes) - calculateTotal(expenses));
+    }
+    
   }, [incomes, expenses, setTotalIncome, setTotalExpense, setTotalAvailble]);
 
   useEffect(() => {
