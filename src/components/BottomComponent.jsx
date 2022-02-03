@@ -55,24 +55,26 @@ function BottomComponent({
   };
 
   const addIncExp = () => {
-    if (selectIncExp === "inc") {
-      setIncomes([
-        ...incomes,
-        {
-          description: inputValue.description,
-          amount: inputValue.amount,
-          id: uuidv4(),
-        },
-      ]);
-    } else {
-      setExpenses([
-        ...expenses,
-        {
-          description: inputValue.description,
-          amount: inputValue.amount,
-          id: uuidv4(),
-        },
-      ]);
+    if (inputValue.description !== '' && inputValue.amount > 0) {
+      if (selectIncExp === "inc") {
+        setIncomes([
+          ...incomes,
+          {
+            description: inputValue.description,
+            amount: inputValue.amount,
+            id: uuidv4(),
+          },
+        ]);
+      } else {
+        setExpenses([
+          ...expenses,
+          {
+            description: inputValue.description,
+            amount: inputValue.amount,
+            id: uuidv4(),
+          },
+        ]);
+      }
     }
   };
 
