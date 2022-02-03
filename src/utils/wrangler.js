@@ -28,7 +28,9 @@ export const formatValue = (value) => {
 export const calPercentage = (partNum, wholeNum) => {
   if (wholeNum > 0) {
     return Math.ceil((partNum / wholeNum) * 100);
-  } else return 0;
+  } else {
+    return 0;
+  }
 };
 
 export const calculateTotal = (values) => {

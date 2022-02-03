@@ -5,8 +5,10 @@ function TopComponent({ totalIncome, totalExpense, totalAvailable }) {
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {
-    if (totalIncome > 0) {
+    if (totalIncome > totalExpense) {
       setPercentage(calPercentage(totalExpense, totalIncome));
+    }else{
+      setPercentage(0)
     }
   }, [totalIncome, totalExpense]);
 
