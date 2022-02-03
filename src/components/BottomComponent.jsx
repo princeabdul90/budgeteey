@@ -19,13 +19,13 @@ function BottomComponent({
   const [incomes, setIncomes] = useState(storedBudget.incomes);
   const [expenses, setExpenses] = useState(storedBudget.expenses);
 
-  const inc = calculateTotal(incomes);
-  const exp = calculateTotal(expenses);
+  // const inc = calculateTotal(incomes);
+  // const exp = calculateTotal(expenses);
 
   useEffect(() => {
-    setTotalIncome(inc);
-    setTotalExpense(exp);
-    setTotalAvailble(inc - exp);
+    setTotalIncome(calculateTotal(incomes));
+    setTotalExpense(calculateTotal(expenses));
+    setTotalAvailble(calculateTotal(incomes) - calculateTotal(expenses));
   }, [incomes, expenses]);
 
   useEffect(() => {
